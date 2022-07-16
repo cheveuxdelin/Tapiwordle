@@ -1,0 +1,120 @@
+:root {
+  --primary: #241B2E;
+  --secondary: #52d053;
+  --keyboard-separation: 5px;
+  --squares-separation: 10px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-family: "courier";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--primary);
+  display: flex;
+  font-size: 1.2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.row>* {
+  margin: 5px 10px;
+}
+
+.game {
+  background-color: var(--primary);
+  width: min(100vw, 500px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  height: 90vh;
+  align-items: center;
+}
+
+header {
+  align-self: flex-start;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 50px;
+}
+
+header>div {
+  text-align: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+#keyboard {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-areas:
+    "Q W E R T Y U I O P"
+    "A S D F G H J K L GO"
+    "Z X C V B N M DEL DEL DEL";
+  gap: var(--keyboard-separation);
+  padding: var(--keyboard-separation);
+  align-self: flex-end;
+  margin-bottom: 10%;
+}
+
+#squares {
+  display: grid;
+  gap: var(--squares-separation);
+  padding: var(--squares-separation);
+  justify-items: center;
+  width: fit-content;
+  margin: auto;
+}
+
+.keyboard-key {
+  background-color: chocolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  font-size: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.keyboard-key:active {
+  background-color: red;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
